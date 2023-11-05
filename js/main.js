@@ -23,7 +23,8 @@ var swiper = new Swiper(".mySwiper", {
     },
   });
 
-
+const links = document.querySelectorAll('.menu-items a');
+const checkbox = document.querySelector('input[type="checkbox"]')
 document.getElementById('BREAKFAST').addEventListener('click' , breakfast)
 document.getElementById('STARTER').addEventListener('click' , starter)
 document.getElementById('VEG').addEventListener('click' , veg)
@@ -55,3 +56,7 @@ function nonVeg (){
     document.querySelector('.veg__container').classList.add('hidden')
     document.querySelector('.non-veg__container').classList.toggle('hidden')
 }
+
+links.forEach(link => link.addEventListener('click', () => {
+    checkbox.checked = false
+}))
